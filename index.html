@@ -72,6 +72,8 @@
     			
             
     			
+    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
+    			
             
 		</nav>
 		<nav class="header-nav">
@@ -174,7 +176,7 @@
 <hr>
 <p>01Studio community: <strong><em><a href="http://www.01Studio.org" target="_blank" rel="noopener">www.01Studio.org</a></em></strong></p>
 <p><img src="/2020/07/22/micropython-learning-report/pyboard.jpg" alt="PyBoard v1.1-CN"></p>
-<p><strong><em>测试文章 更多内容 敬请期待</em></strong></p>
+<iframe src="//player.bilibili.com/player.html?aid=286286318&bvid=BV1ff4y197EV&cid=211268706&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="580" quality="high" <p><strong><em>测试文章 更多内容 敬请期待</em></strong><p></p></iframe>
         
       
 
@@ -183,6 +185,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">test</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -270,6 +283,8 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
     
       
+      
+      
     
     
 
@@ -277,11 +292,13 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     
       
-      <li style="width: 100%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
         
+      
+      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -300,6 +317,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">test</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
@@ -346,6 +367,12 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 
     
 
+    
+    	<section class="tools-section tools-section-me" q-show="aboutme">
+  	  	
+  	  		<div class="aboutme-wrap" id="js-aboutme">正在努力 谢谢你的浏览</div>
+  	  	
+    	</section>
     
   </div>
   
