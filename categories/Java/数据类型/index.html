@@ -6,21 +6,16 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Python对约瑟夫问题(Josephus Problem)的高效解决方法 | UltraFisher</title>
+  <title>Category: 数据类型 | UltraFisher</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Made by Mike_Zhang 1.约瑟夫问题引入约瑟夫问题由来先看一下百度百科对约瑟夫问题的介绍：  据说著名犹太历史学家Josephus有过以下的故事：在罗马人占领乔塔帕特后，39 个犹太人与Josephus及他的朋友躲到一个洞中，39个犹太人决定宁愿死也不要被敌人抓到，于是决定了一个自杀方式，41个人排成一个圆圈，由第1个人开始报数，每报数到第3人该人就必须自杀，然后再由下一个重新报数">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Python对约瑟夫问题(Josephus Problem)的高效解决方法">
-<meta property="og:url" content="http://yoursite.com/2020/08/05/josephus-problem/index.html">
+  <meta name="description" content="UltraFisher is made by Mike_Zhang">
+<meta property="og:type" content="website">
+<meta property="og:title" content="UltraFisher">
+<meta property="og:url" content="http://yoursite.com/categories/Java/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/index.html">
 <meta property="og:site_name" content="UltraFisher">
-<meta property="og:description" content="Made by Mike_Zhang 1.约瑟夫问题引入约瑟夫问题由来先看一下百度百科对约瑟夫问题的介绍：  据说著名犹太历史学家Josephus有过以下的故事：在罗马人占领乔塔帕特后，39 个犹太人与Josephus及他的朋友躲到一个洞中，39个犹太人决定宁愿死也不要被敌人抓到，于是决定了一个自杀方式，41个人排成一个圆圈，由第1个人开始报数，每报数到第3人该人就必须自杀，然后再由下一个重新报数">
+<meta property="og:description" content="UltraFisher is made by Mike_Zhang">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-08-05T04:45:50.000Z">
-<meta property="article:modified_time" content="2020-08-05T09:26:57.030Z">
 <meta property="article:author" content="Mike_Zhang">
-<meta property="article:tag" content="python">
-<meta property="article:tag" content="josephus_problem">
-<meta property="article:tag" content="约瑟夫环">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="UltraFisher" type="application/atom+xml">
@@ -161,709 +156,83 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-josephus-problem" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      Python对约瑟夫问题(Josephus Problem)的高效解决方法
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2020" class="archive-year">2020</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2020/08/15/Java%E5%AD%A6%E4%B9%A0%E9%87%8D%E9%9A%BE%E7%82%B9%E8%AE%B0%E5%BD%95/" class="archive-article-date">
+  	<time datetime="2020-08-15T07:14:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-15</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2020/08/15/Java%E5%AD%A6%E4%B9%A0%E9%87%8D%E9%9A%BE%E7%82%B9%E8%AE%B0%E5%BD%95/">Java学习重难点记录</a>
     </h1>
   
 
-        <!--显示阅读次数-->
-        
-          <br/>
-          <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
-          <span class="icon-sort"></span>
-          <span >
-                  阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
-          </span>
-          </a>
-        
-        <!--显示阅读次数完毕-->
-        
-        <a href="/2020/08/05/josephus-problem/" class="archive-article-date">
-  	<time datetime="2020-08-05T04:45:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong><em>Made by Mike_Zhang</em></strong></p>
-<h2 id="1-约瑟夫问题引入"><a href="#1-约瑟夫问题引入" class="headerlink" title="1.约瑟夫问题引入"></a><strong>1.约瑟夫问题引入</strong></h2><h4 id="约瑟夫问题由来"><a href="#约瑟夫问题由来" class="headerlink" title="约瑟夫问题由来"></a>约瑟夫问题由来</h4><p>先看一下<a href="https://baike.baidu.com/item/约瑟夫问题" target="_blank" rel="noopener">百度百科</a>对约瑟夫问题的介绍：</p>
-<blockquote>
-<p>据说著名犹太历史学家Josephus有过以下的故事：在罗马人占领乔塔帕特后，39 个犹太人与Josephus及他的朋友躲到一个洞中，39个犹太人决定宁愿死也不要被敌人抓到，于是决定了一个自杀方式，41个人排成一个圆圈，由第1个人开始报数，每报数到第3人该人就必须自杀，然后再由下一个重新报数，直到所有人都自杀身亡为止。然而Josephus和他的朋友并不想遵从。首先从一个人开始，越过k-2个人（因为第一个人已经被越过），并杀掉第k个人。接着，再越过k-1个人，并杀掉第k个人。这个过程沿着圆圈一直进行，直到最终只剩下一个人留下，这个人就可以继续活着。问题是，给定了和，一开始要站在什么地方才能避免被处决？Josephus要他的朋友先假装遵从，他将朋友与自己安排在第16个与第31个位置，于是逃过了这场死亡游戏。(来自百度百科-约瑟夫问题)</p>
-</blockquote>
-<a id="more"></a>
-<hr>
-<h4 id="实际问题案例"><a href="#实际问题案例" class="headerlink" title="实际问题案例"></a>实际问题案例</h4><p>以下问题来自我的一个作业，经过改编：</p>
-<blockquote>
-<p>There are n people sitting around a circle, and all are numbered from 1 to n. Starting from the first person, they count from 1 to m and the one who counts m will be eliminated. The process will be started again from the next person until all people are eliminated. Your task now is to write a program to derive the order of the elimination for given n and m. That is, your program should ask the user to input integers n and m, and then print the sequence of elimination on screen.</p>
-</blockquote>
-<p>翻译如下：</p>
-<blockquote>
-<p>一圈有n个人坐着，所有人从1到n编号，从第一个人开始，他们从1数到m，数到m的人将被淘汰。这个过程将从下一个人重新开始，直到所有人都被淘汰。现在的任务是编写一个程序，根据给定的n和m来推导淘汰的顺序。也就是说，程序应该要求用户输入整数n和m，然后在屏幕上输出淘汰的顺序。 </p>
-</blockquote>
-<p>举例：<br>总人数n=5，数到m=2</p>
-<blockquote>
-<p>第一轮：(从1开始数)<br>1 <del>2</del> 3 <del>4</del> 5 （淘汰：2, 4）<br>第二轮:（上次淘汰为4号，则从5号开始数，5号数完回到1号）<br><del>1</del> 3 <del>5</del> （淘汰：2, 4, 1, 5）<br>第三轮：<br><del>3</del> （淘汰：2, 4, 1, 5, 3）<br>结束</p>
-</blockquote>
-<p>所以，最后淘汰顺序为2, 4, 1, 5, 3</p>
-<p>现在需要用Python编写一个程序来解决这一个问题，但是在此之前，我们先来看一个在生活中类似的问题——星期计算问题。</p>
-<h2 id="2-星期计算问题"><a href="#2-星期计算问题" class="headerlink" title="2.星期计算问题"></a><strong>2.星期计算问题</strong></h2><blockquote>
-<p>假设今天是1号星期一，问：过n天后是星期几？</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>日</th>
-<th align="center">一</th>
-<th align="right">二</th>
-<th align="right">三</th>
-<th align="right">四</th>
-<th align="right">五</th>
-<th align="right">六</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>-</td>
-<td align="center">1</td>
-<td align="right">2</td>
-<td align="right">3</td>
-<td align="right">4</td>
-<td align="right">5</td>
-<td align="right">6</td>
-</tr>
-<tr>
-<td>7</td>
-<td align="center">8</td>
-<td align="right">9</td>
-<td align="right">10</td>
-<td align="right">11</td>
-<td align="right">12</td>
-<td align="right">13</td>
-</tr>
-<tr>
-<td>14</td>
-<td align="center">15</td>
-<td align="right">16</td>
-<td align="right">17</td>
-<td align="right">18</td>
-<td align="right">19</td>
-<td align="right">20</td>
-</tr>
-<tr>
-<td>21</td>
-<td align="center">22</td>
-<td align="right">23</td>
-<td align="right">24</td>
-<td align="right">25</td>
-<td align="right">26</td>
-<td align="right">27</td>
-</tr>
-<tr>
-<td>28</td>
-<td align="center">29</td>
-<td align="right">30</td>
-<td align="right"></td>
-<td align="right"></td>
-<td align="right"></td>
-<td align="right"></td>
-</tr>
-</tbody></table>
-<blockquote>
-<p>举例：<br>过19天后，为20号，星期六<br>过8天后，为9号，星期二<br>过6天后，为7号，星期日</p>
-</blockquote>
-<p>以上例子根据日历来数是非常简单的，但是问10000天之后是星期几就没有这样简单了。<br>但是我们可以根据规律，以7天为一个周期，用数学方法来计算。把经过的日子除以7<strong>取余数</strong>就可以找到规律并计算出目标日期的星期。</p>
-<blockquote>
-<p>验证：<br>过19天后，为20号 &gt;&gt;&gt; (1+19)/7 = 2余6 &gt;&gt;&gt; 星期六<br>过8天后，为9号 &gt;&gt;&gt; (1+8)/7 = 1余2 &gt;&gt;&gt; 星期二<br>过6天后，为7号 &gt;&gt;&gt; (1+6)/7 = 1余0 &gt;&gt;&gt; 星期日(余0看作星期日)</p>
-</blockquote>
-<hr>
-<p><strong>取余数(take the remainder)</strong>，在Python中的运算符是%(mod运算):</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="number">1</span>+<span class="number">19</span>)%<span class="number">7</span></span><br><span class="line">(<span class="number">1</span>+<span class="number">8</span>)%<span class="number">7</span></span><br><span class="line">(<span class="number">1</span>+<span class="number">6</span>)%<span class="number">7</span></span><br></pre></td></tr></table></figure>
-<p>以下为Python实现代码：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">"今天是1号星期一"</span>)</span><br><span class="line">weekstr = <span class="string">'日一二三四五六'</span></span><br><span class="line">n = int(input(<span class="string">"输入经过的天数："</span>))</span><br><span class="line">m = (<span class="number">1</span> + n) % <span class="number">7</span></span><br><span class="line">week = weekstr[m]</span><br><span class="line">print(<span class="string">"经过"</span>,n,<span class="string">"天后是星期"</span>,week,sep=<span class="string">''</span>)</span><br></pre></td></tr></table></figure>
-<p>输出如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">今天是<span class="number">1</span>号星期一</span><br><span class="line">输入经过的天数：<span class="number">19</span></span><br><span class="line">经过<span class="number">19</span>天后是星期六</span><br></pre></td></tr></table></figure>
-<h2 id="3-Python代码实现"><a href="#3-Python代码实现" class="headerlink" title="3.Python代码实现"></a><strong>3.Python代码实现</strong></h2><p>回到上面介绍的约瑟夫问题</p>
-<blockquote>
-<p>一圈有n个人坐着，所有人从1到n编号，从第一个人开始，他们从1数到m，数到m的人将被淘汰。这个过程将从下一个人重新开始，直到所有人都被淘汰。现在的任务是编写一个程序，根据给定的n和m来推导淘汰的顺序。也就是说，程序应该要求用户输入整数n和m，然后在屏幕上输出淘汰的顺序。 </p>
-</blockquote>
-<p>和刚刚的星期计算问题十分的类似，都是一种周期性的问题，星期问题的周期是7，而约瑟夫问题的周期是一个变量m，也就是一圈人报的数字。这也不奇怪，因为在编程算法中，类似这样的问题又被成为<strong>约瑟夫环</strong></p>
-<h4 id="类比星期问题"><a href="#类比星期问题" class="headerlink" title="类比星期问题"></a>类比星期问题</h4><p>还是用之前的星期列表，如果从1号开始从1报数，每次报到7的出列，那出列的就是和1号同一个星期（星期一）的日子，也就是8日，15日，22日，29日。</p>
-<table>
-<thead>
-<tr>
-<th>日</th>
-<th align="center">一</th>
-<th align="right">二</th>
-<th align="right">三</th>
-<th align="right">四</th>
-<th align="right">五</th>
-<th align="right">六</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>-</td>
-<td align="center">1</td>
-<td align="right">2</td>
-<td align="right">3</td>
-<td align="right">4</td>
-<td align="right">5</td>
-<td align="right">6</td>
-</tr>
-<tr>
-<td>7</td>
-<td align="center">8</td>
-<td align="right">9</td>
-<td align="right">10</td>
-<td align="right">11</td>
-<td align="right">12</td>
-<td align="right">13</td>
-</tr>
-<tr>
-<td>14</td>
-<td align="center">15</td>
-<td align="right">16</td>
-<td align="right">17</td>
-<td align="right">18</td>
-<td align="right">19</td>
-<td align="right">20</td>
-</tr>
-<tr>
-<td>21</td>
-<td align="center">22</td>
-<td align="right">23</td>
-<td align="right">24</td>
-<td align="right">25</td>
-<td align="right">26</td>
-<td align="right">27</td>
-</tr>
-<tr>
-<td>28</td>
-<td align="center">29</td>
-<td align="right">30</td>
-<td align="right"></td>
-<td align="right"></td>
-<td align="right"></td>
-<td align="right"></td>
-</tr>
-</tbody></table>
-<hr>
-<p>现在我们把约瑟夫环也类比成星期问题：<br>举例：总人数n=5，数到m=2</p>
-<table>
-<thead>
-<tr>
-<th>一</th>
-<th align="center">二</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1（开始）</td>
-<td align="center"><strong><em>2</em></strong></td>
-</tr>
-<tr>
-<td>3</td>
-<td align="center"><strong><em>4</em></strong></td>
-</tr>
-<tr>
-<td>5</td>
-<td align="center">-</td>
-</tr>
-</tbody></table>
-<p>从1号开始报数，每次报到2的出列，类比成星期问题，那就是只用两个星期（星期一和星期二），并且星期二的就是需要出列的日子，那就不难发现，在上面的表中，需要出列的就是<strong>2号</strong>和<strong>4号</strong>。</p>
-<p>但是约瑟夫环有一点和星期问题不同，那就是约瑟夫环需要把所有一圈的人（日子）全部淘汰才能结束，那我们就可以把还没有被淘汰的人（日子）顺次接到第一轮的后面，如下：</p>
-<table>
-<thead>
-<tr>
-<th>一</th>
-<th align="center">二</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td align="center"><em><del>2</del></em></td>
-</tr>
-<tr>
-<td>3</td>
-<td align="center"><em><del>4</del></em></td>
-</tr>
-<tr>
-<td>5（开始）</td>
-<td align="center"><strong>1</strong></td>
-</tr>
-<tr>
-<td><strong>3</strong></td>
-<td align="center"><strong>5</strong></td>
-</tr>
-</tbody></table>
-<p>继续报数，这一次从上一次被淘汰（4号）的下一个开始报数（5号），那这一次需要出列的是星期二的<strong>1号</strong>和<strong>5号</strong><br>继续把还没有出列的（3号）接到上一轮的后面：</p>
-<table>
-<thead>
-<tr>
-<th>一</th>
-<th align="center">二</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td align="center"><em><del>2</del></em></td>
-</tr>
-<tr>
-<td>3</td>
-<td align="center"><em><del>4</del></em></td>
-</tr>
-<tr>
-<td>5</td>
-<td align="center"><em><del>1</del></em></td>
-</tr>
-<tr>
-<td>3</td>
-<td align="center"><em><del>5</del></em></td>
-</tr>
-<tr>
-<td><strong>3</strong></td>
-<td align="center"></td>
-</tr>
-</tbody></table>
-<p>最后只剩下<strong>3号</strong>，那就自然变成最后一个出列的<br>综上：淘汰（出列）的顺序就是2号，4号，1号，5号，3号，和我们在开头例子中得出的结果是一样的。</p>
-<p>小结：类比成星期问题，约瑟夫环每次需要淘汰的人位置都可以通过<strong>取余数</strong>的方式确定下来，还需要把未淘汰的人顺次接到上一轮的后面。因此，我们只需先确定每次需要淘汰的位置，然后通过遍历这一圈人，当遍历到的位置和需要淘汰的位置相同时，就把此位置的人移除，并把移除的后一个人作为下一次遍历的起点，不断循环，直到全部的人都被淘汰。</p>
-<p>为了实现以上的想法，我们就需要用到Python中的<strong>队列queue</strong>来当作载体，因为队列的FIFO（即First in First Out,先进先出）的特性能保持这一圈人的顺序不发生变化。</p>
-<h4 id="Python代码"><a href="#Python代码" class="headerlink" title="Python代码"></a>Python代码</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> queue <span class="keyword">import</span> Queue <span class="comment">#引入队列queue</span></span><br><span class="line">n = int(input(<span class="string">"\n输入总人数n（n为正整数）:"</span>))</span><br><span class="line">m = int(input(<span class="string">"输入每次报数 m（m为正整数） :"</span>))</span><br><span class="line">position = <span class="number">1</span> <span class="comment">#需要被淘汰的位置，初始为1</span></span><br><span class="line">nowposition = <span class="number">1</span> <span class="comment">#当前遍历的位置，初始为1</span></span><br><span class="line">outqueue = Queue() <span class="comment">#储存输出的队列</span></span><br><span class="line">nqueue = Queue() <span class="comment">#储存每一遍中还没有被淘汰的人</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,n+<span class="number">1</span>): <span class="comment">#新建一个从1到n的队列</span></span><br><span class="line">    nqueue.put(i)</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> nqueue.empty() <span class="keyword">is</span> <span class="literal">False</span>: <span class="comment">#循环直到列表为空</span></span><br><span class="line">    <span class="comment">#&gt;&gt;&gt;第一步是确定下一次需要被淘汰的位置&lt;&lt;&lt;</span></span><br><span class="line">    position = (m - <span class="number">1</span>) % nqueue.qsize() + <span class="number">1</span> <span class="comment">#使用取余数%来确定下一次需要被淘汰的位置("-1" 和 "+1" 的作用会在后文解释)</span></span><br><span class="line">    <span class="comment">#&gt;&gt;&gt;第二步就是把遍历到的人移到队列的末尾或者输出的队列中&lt;&lt;&lt;</span></span><br><span class="line">    <span class="keyword">if</span> nowposition != position: <span class="comment">#当遍历到的人不是淘汰的目标时，就把他移到队列的末尾</span></span><br><span class="line">        nqueue.put(nqueue.get())</span><br><span class="line">        nowposition += <span class="number">1</span> <span class="comment">#遍历后一个人</span></span><br><span class="line">    <span class="keyword">else</span>: <span class="comment">#当遍历到的人是需要被淘汰的时，把他移动到输出的队列中</span></span><br><span class="line">        outqueue.put(nqueue.get())</span><br><span class="line">        nowposition = <span class="number">1</span> <span class="comment">#下一个人作为遍历的起点</span></span><br><span class="line">print(<span class="string">"&gt;&gt;&gt;结果如下，总人数["</span>,n,<span class="string">"]人，每次报数["</span>,m,<span class="string">"]:"</span>,sep=<span class="string">""</span>)</span><br><span class="line"><span class="keyword">while</span> <span class="keyword">not</span> outqueue.empty():</span><br><span class="line">     print(outqueue.get(), end=<span class="string">' '</span>)<span class="comment">#输出队列</span></span><br></pre></td></tr></table></figure>
-<p>解释以下代码：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">position = (m - <span class="number">1</span>) % nqueue.qsize() + <span class="number">1</span></span><br></pre></td></tr></table></figure>
-<p>这句代码中的”-1” 和 “+1”是为了解决当<strong>报数m</strong>是<strong>剩下队列长度</strong>的倍数时所产生的bug</p>
-<hr>
-<h4 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h4><p>接下来，我用一个例子验证以上代码和这个bug的解决方法</p>
-<p>举例：n=5，m=2</p>
-<p>第1次:</p>
-<blockquote>
-<p>1 2 3 4 5</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>nowposition(人编号)</th>
-<th align="left">position</th>
-<th align="center">outqueue</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1(1)</td>
-<td align="left">2</td>
-<td align="center">-</td>
-</tr>
-</tbody></table>
-<p>第2次:</p>
-<blockquote>
-<p><del>2</del> 3 4 5 1</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>nowposition(人编号)</th>
-<th align="left">position</th>
-<th align="center">outqueue</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>2(2)</td>
-<td align="left">2</td>
-<td align="center">2</td>
-</tr>
-</tbody></table>
-<p>第3次:</p>
-<blockquote>
-<p>3 4 5 1</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>nowposition(人编号)</th>
-<th align="left">position</th>
-<th align="center">outqueue</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1(3)</td>
-<td align="left">2</td>
-<td align="center">2</td>
-</tr>
-</tbody></table>
-<p>第4次:</p>
-<blockquote>
-<p><del>4</del> 5 1 3</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>nowposition(人编号)</th>
-<th align="left">position</th>
-<th align="center">outqueue</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>2(4)</td>
-<td align="left">2</td>
-<td align="center">2, 4</td>
-</tr>
-</tbody></table>
-<p>第5次:</p>
-<blockquote>
-<p>5 1 3</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>nowposition(人编号)</th>
-<th align="left">position</th>
-<th align="center">outqueue</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1(5)</td>
-<td align="left">2</td>
-<td align="center">2, 4</td>
-</tr>
-</tbody></table>
-<p>第6次:</p>
-<blockquote>
-<p><del>1</del> 3 5</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>nowposition(人编号)</th>
-<th align="left">position</th>
-<th align="center">outqueue</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>2(1)</td>
-<td align="left">2</td>
-<td align="center">2, 4, 1</td>
-</tr>
-</tbody></table>
-<p>第7次:</p>
-<blockquote>
-<p>3 5</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>nowposition(人编号)</th>
-<th align="left">position</th>
-<th align="center">outqueue</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1(3)</td>
-<td align="left">2</td>
-<td align="center">2, 4, 1</td>
-</tr>
-</tbody></table>
-<p>解释：此时m=2，剩下队列长度=2，<strong>报数m</strong>是<strong>剩下队列长度</strong>的倍数<br>若直接运行以下代码：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">position = m % nqueue.qsize()</span><br></pre></td></tr></table></figure>
-<p>得到的position返回值是0，并不是正确的position=2，会出现bug<br>因此，加上”-1” 和 “+1”就能解决这个bug，变成以下代码：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">position = (m - <span class="number">1</span>) % nqueue.qsize() + <span class="number">1</span></span><br></pre></td></tr></table></figure>
-
-<p>第8次:</p>
-<blockquote>
-<p><del>5</del> 3</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>nowposition(人编号)</th>
-<th align="left">position</th>
-<th align="center">outqueue</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>2(5)</td>
-<td align="left">2</td>
-<td align="center">2, 4, 1, 5</td>
-</tr>
-</tbody></table>
-<p>第9次:</p>
-<blockquote>
-<p>3</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>nowposition(人编号)</th>
-<th align="left">position</th>
-<th align="center">outqueue</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1(3)</td>
-<td align="left">2</td>
-<td align="center">2, 4, 1, 5</td>
-</tr>
-</tbody></table>
-<p>第10次:</p>
-<blockquote>
-<p><del>3</del></p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>nowposition(人编号)</th>
-<th align="left">position</th>
-<th align="center">outqueue</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>2(3)</td>
-<td align="left">2</td>
-<td align="center">2, 4, 1, 5, 3</td>
-</tr>
-</tbody></table>
-<p>nqueue队列变空，循环结束，输出outqueue：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">3</span></span><br></pre></td></tr></table></figure>
-<p>和开头举的例子结果相同。</p>
-<h2 id="4-总结"><a href="#4-总结" class="headerlink" title="4.总结"></a><strong>4.总结</strong></h2><p>去掉注释后的代码其实没有多少行：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> queue <span class="keyword">import</span> Queue </span><br><span class="line">n = int(input(<span class="string">"\n输入总人数n（n为正整数）:"</span>))</span><br><span class="line">m = int(input(<span class="string">"输入每次报数 m（m为正整数） :"</span>))</span><br><span class="line">position = <span class="number">1</span> </span><br><span class="line">nowposition = <span class="number">1</span> </span><br><span class="line">outqueue = Queue() </span><br><span class="line">nqueue = Queue() </span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,n+<span class="number">1</span>): </span><br><span class="line">    nqueue.put(i)</span><br><span class="line"><span class="keyword">while</span> nqueue.empty() <span class="keyword">is</span> <span class="literal">False</span>: </span><br><span class="line">    position = (m - <span class="number">1</span>) % nqueue.qsize() + <span class="number">1</span> </span><br><span class="line">    <span class="keyword">if</span> nowposition != position:</span><br><span class="line">        nqueue.put(nqueue.get())</span><br><span class="line">        nowposition += <span class="number">1</span> </span><br><span class="line">    <span class="keyword">else</span>: </span><br><span class="line">        outqueue.put(nqueue.get())</span><br><span class="line">        nowposition = <span class="number">1</span> </span><br><span class="line">print(<span class="string">"&gt;&gt;&gt;结果如下，总人数["</span>,n,<span class="string">"]人，每次报数["</span>,m,<span class="string">"]:"</span>,sep=<span class="string">""</span>)</span><br><span class="line"><span class="keyword">while</span> <span class="keyword">not</span> outqueue.empty():</span><br><span class="line">     print(outqueue.get(), end=<span class="string">' '</span>)</span><br></pre></td></tr></table></figure>
-<p>核心就是类比星期计算问题，采用取余数来获取下一次需要被淘汰的人的位置，当遍历到此位置时，就把他移除，并继续遍历。</p>
-<p>网上有好多关于约瑟夫环的解决方法，可能我的方法并不是最简单的，最高效的，但也希望大家一起交流，分享，指出问题，谢谢！</p>
-<hr>
-<p>引用：<br>百度百科—约瑟夫问题 <a href="https://baike.baidu.com/item/约瑟夫问题" target="_blank" rel="noopener">https://baike.baidu.com/item/约瑟夫问题</a></p>
-<hr>
-<p><strong><em>原创文章，转载请标明出处</em></strong><br><strong><em>Made by Mike_Zhang</em></strong></p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>感谢你的支持<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/alipay.jpg">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/wechatpay.jpg">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">josephus_problem</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">约瑟夫环</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">学习</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/python//" class="article-tag-list-link color2">python</a>
+        			<a href="/categories/Java//" class="article-tag-list-link color5">Java</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="/categories/python/josephus-problem//" class="article-tag-list-link color2">josephus_problem</a>
+        			<a href="/categories/Java/数据类型//" class="article-tag-list-link color5">数据类型</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="/categories/python/josephus-problem/约瑟夫环//" class="article-tag-list-link color5">约瑟夫环</a>
+        			<a href="/categories/Java/数据类型/数据类型转换//" class="article-tag-list-link color2">数据类型转换</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫或长按分享</p>
-    <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://ultrafisher.github.io/2020/08/05/josephus-problem/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2020/08/15/Java%E5%AD%A6%E4%B9%A0%E9%87%8D%E9%9A%BE%E7%82%B9%E8%AE%B0%E5%BD%95/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Java学习重难点记录
-        
-      </div>
-    </a>
   
   
-    <a href="/2020/07/30/hexo+yilia%E4%B8%BB%E9%A2%98%E4%B8%AD%E7%94%A8%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87%E8%AE%BE%E7%BD%AE%E8%83%8C%E6%99%AF/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hexo+yilia主题中用本地图片设置背景</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-约瑟夫问题引入"><span class="toc-number">1.</span> <span class="toc-text">1.约瑟夫问题引入</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#约瑟夫问题由来"><span class="toc-number">1.0.1.</span> <span class="toc-text">约瑟夫问题由来</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#实际问题案例"><span class="toc-number">1.0.2.</span> <span class="toc-text">实际问题案例</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-星期计算问题"><span class="toc-number">2.</span> <span class="toc-text">2.星期计算问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Python代码实现"><span class="toc-number">3.</span> <span class="toc-text">3.Python代码实现</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#类比星期问题"><span class="toc-number">3.0.1.</span> <span class="toc-text">类比星期问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Python代码"><span class="toc-number">3.0.2.</span> <span class="toc-text">Python代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#验证"><span class="toc-number">3.0.3.</span> <span class="toc-text">验证</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-总结"><span class="toc-number">4.</span> <span class="toc-text">4.总结</span></a></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
-
-
-
-  
-      <section id="comments" class="comments">
-        <style>
-          .comments{margin:30px;padding:10px;background:#fff}
-          @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
-        </style>
-        <div id="vcomment" class="comment"></div> 
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-<script>
-   var notify = 'true' == true ? true : false;
-   var verify = 'false' == true ? true : false;
-    window.onload = function() {
-        new Valine({
-            el: '.comment',
-            notify: notify,
-            verify: verify,
-            app_id: "xPfvtHmxSDcqGwKW6R8EEWXM-gzGzoHsz",
-            app_key: "jVB4RsyHUFfRbEhhlssoxEVQ",
-            placeholder: "有话要说？",
-            avatar:""
-        });
-    }
-</script>
-    </section>
-  
-
+    
 
 
           </div>
@@ -896,10 +265,10 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
 		isTag: false,
-		isCategory: false,
+		isCategory: true,
 		open_in_new: false,
 		toc_hide_index: true,
 		root: "/",
