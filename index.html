@@ -182,26 +182,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>之前我发布了一篇<a href="https://ultrafisher.github.io/2020/08/23/在Hexo中用Markdown添加网络或本地视频以及GIF动图/" target="_blank" rel="noopener">在Hexo中用Markdown添加网络或本地视频以及GIF动图</a>的文章,当时上传的文件体积不大,最大的也只有1.5MB.后来我尝试把时间更长, 体积更大的视频上传, 但是并没有成功, warning警告说“GitHub建议上传最大体积为50MB, 上限为100MB”, 很明显我上传的视频文件体积已经超过了100MB. 因此我删掉了那个大文件, 但是当我再次尝试部署时, 还是弹出来一样的warning, 报错文件的路径也和之前的一样, 可是我明明已经删除了那个文件, 后来经过不断的尝试以及在网上搜索, 我找到了一篇和我遇到问题类似的文章<a href="https://perry96.com/archives/882898e3.html" target="_blank" rel="noopener">Hexo部署报错Spawn failed及解决方案</a>, 此方法指出报错的根源是出现在.deploy_git文件夹里, 删除本地文件并不能删除.deploy_git文件夹里的文件, 解决方法就是让本地仓库文件恢复到没有出现问题前的状态.<br>但这个并没有完全解决我的问题, 后来我不断尝试, 完善了<a href="https://perry96.com/archives/882898e3.html" target="_blank" rel="noopener">Hexo部署报错Spawn failed及解决方案</a>, 我的方法如下:</p>
-<h2 id="1-获取GitHub最新仓库commitId"><a href="#1-获取GitHub最新仓库commitId" class="headerlink" title="1.获取GitHub最新仓库commitId"></a><strong>1.获取GitHub最新仓库commitId</strong></h2><p>获取GitHub最新仓库commitId, 此commitId就是你上一次部署成功的链接, 获取方法如下:</p>
-<blockquote>
-<p>1.点击更新时间:<br><img src="/2020/09/06/%E5%9B%A0%E4%B8%8A%E4%BC%A0%E8%BF%87%E5%A4%A7%E6%96%87%E4%BB%B6%E8%80%8C%E5%AF%BC%E8%87%B4hexo%E9%83%A8%E7%BD%B2%E6%97%B6Spawnfailed%E6%8A%A5%E9%94%99%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/2.jpg" alt><br>2.找到commitId并复制:<br><img src="/2020/09/06/%E5%9B%A0%E4%B8%8A%E4%BC%A0%E8%BF%87%E5%A4%A7%E6%96%87%E4%BB%B6%E8%80%8C%E5%AF%BC%E8%87%B4hexo%E9%83%A8%E7%BD%B2%E6%97%B6Spawnfailed%E6%8A%A5%E9%94%99%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/3.jpg" alt></p>
-</blockquote>
-<h2 id="2-恢复仓库文件"><a href="#2-恢复仓库文件" class="headerlink" title="2.恢复仓库文件"></a><strong>2.恢复仓库文件</strong></h2><h5 id="打开终端-并到GitHub本地仓库目录下"><a href="#打开终端-并到GitHub本地仓库目录下" class="headerlink" title="打开终端, 并到GitHub本地仓库目录下"></a>打开终端, 并到GitHub本地仓库目录下</h5><p>根据文章<a href="https://perry96.com/archives/882898e3.html" target="_blank" rel="noopener">Hexo部署报错Spawn failed及解决方案</a>, 本地仓库应该为.deploy_git文件夹, 但是我并没有找到此文件夹, 我尝试了好多次都没有打开这个路径.<br>后来我干脆直接用命令语句打开:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd .deploy_git</span><br></pre></td></tr></table></figure>
-<p>万万没想到, 没有报错, 就说明打开了本地仓库文件夹.deploy_git.</p>
-<h5 id="接下来输入命令"><a href="#接下来输入命令" class="headerlink" title="接下来输入命令"></a>接下来输入命令</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard  commitId</span><br></pre></td></tr></table></figure>
-<p>commitId即为刚刚从GitHub仓库复制的commitId, 即如下:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard  c7e7...ed</span><br></pre></td></tr></table></figure>
-<p>(此处仅举例, commitId需填写完整)</p>
-<h5 id="最后进行Hexo操作"><a href="#最后进行Hexo操作" class="headerlink" title="最后进行Hexo操作"></a>最后进行Hexo操作</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-<p>最后你会发现网站恢复到上一次成功部署后的样子了, 下一次部署的时候就不会报错了.</p>
-<h2 id="3-注意事项"><a href="#3-注意事项" class="headerlink" title="3.注意事项"></a><strong>3.注意事项</strong></h2><p><strong>1.上传到GitHub的单个文件大小不要超过50MB;</strong><br><strong>2.部署Hexo是把.deploy_git文件push到GitHub上的, 在mac上可能.deploy_git文件夹被隐藏, 直接通过命令语句打开即可.</strong><br>希望大家一起交流，分享，指出问题，谢谢！</p>
-<hr>
-<p>引用：<br><a href="https://perry96.com/archives/882898e3.html" target="_blank" rel="noopener">Hexo部署报错Spawn failed及解决方案</a></p>
-<hr>
-<p><strong><em>原创文章，转载请标明出处</em></strong><br><strong><em>Made by Mike_Zhang</em></strong></p>
-<center><img src="/2020/09/06/%E5%9B%A0%E4%B8%8A%E4%BC%A0%E8%BF%87%E5%A4%A7%E6%96%87%E4%BB%B6%E8%80%8C%E5%AF%BC%E8%87%B4hexo%E9%83%A8%E7%BD%B2%E6%97%B6Spawnfailed%E6%8A%A5%E9%94%99%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/logo3.gif" width height></center>
-
+        
       
 
       
@@ -401,6 +382,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><strong><em>Made by Mike_Zhang</em></strong><br>最近更新维护了一下blog，之前的视频是通过链接过来的，现在可以添加本地的视频，还可以添加本地的GIF动图，具体效果可以看一下我的<a href="https://ultrafisher.github.io/2020/07/29/hello-ultrafisher/" target="_blank" rel="noopener">第一篇文章 “Hello UltraFisher”</a>。这个blog的文章都是用标记语言Markdown写的，那接下来说说如何在Hexo中用Markdown添加网络或本地视频以及GIF动图</p>
+<p><strong><em>注意 : 上传的单个文件大小不要超过50MB, 具体问题以及解决方法已经更新 : <a href="https://ultrafisher.github.io/2020/09/06/因上传过大文件而导致hexo部署时Spawnfailed报错的解决方法以及注意事项/" target="_blank" rel="noopener">因上传过大文件而导致hexo部署时Spawn failed报错的解决方法以及注意事项</a></em></strong></p>
 <h2 id="1-用Markdown添加网络视频"><a href="#1-用Markdown添加网络视频" class="headerlink" title="1.用Markdown添加网络视频"></a><strong>1.用Markdown添加网络视频</strong></h2><p>目前可以在Markdown里链接的视频平台并不多，有b站和优酷，接下来我就用b站举例。</p>
         
       

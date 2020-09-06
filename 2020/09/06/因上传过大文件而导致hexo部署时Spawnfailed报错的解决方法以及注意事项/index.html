@@ -19,7 +19,7 @@
 <meta property="og:image" content="http://yoursite.com/2020/09/06/%E5%9B%A0%E4%B8%8A%E4%BC%A0%E8%BF%87%E5%A4%A7%E6%96%87%E4%BB%B6%E8%80%8C%E5%AF%BC%E8%87%B4hexo%E9%83%A8%E7%BD%B2%E6%97%B6Spawnfailed%E6%8A%A5%E9%94%99%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/3.jpg">
 <meta property="og:image" content="http://yoursite.com/2020/09/06/%E5%9B%A0%E4%B8%8A%E4%BC%A0%E8%BF%87%E5%A4%A7%E6%96%87%E4%BB%B6%E8%80%8C%E5%AF%BC%E8%87%B4hexo%E9%83%A8%E7%BD%B2%E6%97%B6Spawnfailed%E6%8A%A5%E9%94%99%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/logo3.gif">
 <meta property="article:published_time" content="2020-09-06T02:27:41.000Z">
-<meta property="article:modified_time" content="2020-09-06T03:35:55.841Z">
+<meta property="article:modified_time" content="2020-09-06T03:39:52.738Z">
 <meta property="article:author" content="Mike_Zhang">
 <meta property="article:tag" content="hexo">
 <meta property="article:tag" content="spawn_failed报错">
@@ -196,6 +196,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>之前我发布了一篇<a href="https://ultrafisher.github.io/2020/08/23/在Hexo中用Markdown添加网络或本地视频以及GIF动图/" target="_blank" rel="noopener">在Hexo中用Markdown添加网络或本地视频以及GIF动图</a>的文章,当时上传的文件体积不大,最大的也只有1.5MB.后来我尝试把时间更长, 体积更大的视频上传, 但是并没有成功, warning警告说“GitHub建议上传最大体积为50MB, 上限为100MB”, 很明显我上传的视频文件体积已经超过了100MB. 因此我删掉了那个大文件, 但是当我再次尝试部署时, 还是弹出来一样的warning, 报错文件的路径也和之前的一样, 可是我明明已经删除了那个文件, 后来经过不断的尝试以及在网上搜索, 我找到了一篇和我遇到问题类似的文章<a href="https://perry96.com/archives/882898e3.html" target="_blank" rel="noopener">Hexo部署报错Spawn failed及解决方案</a>, 此方法指出报错的根源是出现在.deploy_git文件夹里, 删除本地文件并不能删除.deploy_git文件夹里的文件, 解决方法就是让本地仓库文件恢复到没有出现问题前的状态.<br>但这个并没有完全解决我的问题, 后来我不断尝试, 完善了<a href="https://perry96.com/archives/882898e3.html" target="_blank" rel="noopener">Hexo部署报错Spawn failed及解决方案</a>, 我的方法如下:</p>
+<a id="more"></a>
 <h2 id="1-获取GitHub最新仓库commitId"><a href="#1-获取GitHub最新仓库commitId" class="headerlink" title="1.获取GitHub最新仓库commitId"></a><strong>1.获取GitHub最新仓库commitId</strong></h2><p>获取GitHub最新仓库commitId, 此commitId就是你上一次部署成功的链接, 获取方法如下:</p>
 <blockquote>
 <p>1.点击更新时间:<br><img src="/2020/09/06/%E5%9B%A0%E4%B8%8A%E4%BC%A0%E8%BF%87%E5%A4%A7%E6%96%87%E4%BB%B6%E8%80%8C%E5%AF%BC%E8%87%B4hexo%E9%83%A8%E7%BD%B2%E6%97%B6Spawnfailed%E6%8A%A5%E9%94%99%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/2.jpg" alt><br>2.找到commitId并复制:<br><img src="/2020/09/06/%E5%9B%A0%E4%B8%8A%E4%BC%A0%E8%BF%87%E5%A4%A7%E6%96%87%E4%BB%B6%E8%80%8C%E5%AF%BC%E8%87%B4hexo%E9%83%A8%E7%BD%B2%E6%97%B6Spawnfailed%E6%8A%A5%E9%94%99%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/3.jpg" alt></p>
