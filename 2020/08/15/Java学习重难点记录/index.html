@@ -17,7 +17,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/2020/08/15/Java%E5%AD%A6%E4%B9%A0%E9%87%8D%E9%9A%BE%E7%82%B9%E8%AE%B0%E5%BD%95/logo3.gif">
 <meta property="article:published_time" content="2020-08-15T07:14:22.000Z">
-<meta property="article:modified_time" content="2020-09-13T06:50:49.364Z">
+<meta property="article:modified_time" content="2020-09-19T14:04:53.919Z">
 <meta property="article:author" content="Mike_Zhang">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="学习">
@@ -248,19 +248,19 @@
 <p>因为byte数据类型的取值范围是-128～127，以上例子中被转换的数值为129，已经超出了byte数据类型的取值范围，所以不能正常显示为129，而现实了看似奇怪的-127.<br>其实，-127并不是凭空出现的，而是因为byte数据类型对于超出其取值范围的强制类型转换有特殊的处理过程。</p>
 <p>步骤为：</p>
 <blockquote>
-<p><strong>1.保留被转换数值补码的低字节部分；</strong><br><strong>2.将保留下来的部分转换成源码。</strong></p>
+<p><strong>1.保留被转换数值补码的低字节部分；</strong><br><strong>2.将保留下来的部分转换成原码。</strong></p>
 </blockquote>
-<p>（这里不会对源码，反码，补码等概念进行讲解，若不了解的，请自行搜索）</p>
+<p>（这里不会对原码，反码，补码等概念进行讲解，若不了解的，请自行搜索）</p>
 <p>接下来以129为例：</p>
 <blockquote>
-<p><strong>第一步 保留被转换数值补码的低字节部分</strong><br>129的源码为 <strong>0…0 1000 0001(源)</strong><br>保留其低字节部分后为：<br><strong>1000 0001(源)</strong></p>
+<p><strong>第一步 保留被转换数值补码的低字节部分</strong><br>129的原码为 <strong>0…0 1000 0001(原)</strong><br>保留其低字节部分后为：<br><strong>1000 0001(原)</strong></p>
 </blockquote>
 <blockquote>
-<p><strong>第二步 将保留下来的部分转换成源码</strong><br>因为程序是以补码处理数值的，所以上一步中的<strong>1000 0001(源)</strong>将会被看成补码<strong>1000 0001(补)</strong><br>接下来将补码还原成源码：<br><strong>1000 0001(补)</strong> &gt;&gt;&gt; <strong>1000 0000(反)</strong> &gt;&gt;&gt; <strong>1111 1111(源)</strong><br><strong>1111 1111(源)</strong> 即为-127（<strong>1111 1111(源)</strong> 的最高位是符号位，1表示负数，余下的 <strong>111 1111</strong> 即为十进制的127，所以<strong>1111 1111(源)</strong> 为-127）</p>
+<p><strong>第二步 将保留下来的部分转换成原码</strong><br>因为程序是以补码处理数值的，所以上一步中的<strong>1000 0001(原)</strong>将会被看成补码<strong>1000 0001(补)</strong><br>接下来将补码还原成原码：<br><strong>1000 0001(补)</strong> &gt;&gt;&gt; <strong>1000 0000(反)</strong> &gt;&gt;&gt; <strong>1111 1111(原)</strong><br><strong>1111 1111(原)</strong> 即为-127（<strong>1111 1111(原)</strong> 的最高位是符号位，1表示负数，余下的 <strong>111 1111</strong> 即为十进制的127，所以<strong>1111 1111(原)</strong> 为-127）</p>
 </blockquote>
 <p>所以以上步骤解释了byte a = (byte)129;的输出结果为-127。</p>
 <hr>
-<h4 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h4><p>在研究过程中发现，其实源码、反码、补码中可以深挖的东西还有好多，都十分有趣，之后也会记录。<br>最后，希望大家一起交流，分享，指出问题，谢谢！</p>
+<h4 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h4><p>在研究过程中发现，其实原码、反码、补码中可以深挖的东西还有好多，都十分有趣，之后也会记录。<br>最后，希望大家一起交流，分享，指出问题，谢谢！</p>
 <hr>
 <p><strong><em>原创文章，转载请标明出处</em></strong><br><strong><em>Made by Mike_Zhang</em></strong></p>
 <center><img src="/2020/08/15/Java%E5%AD%A6%E4%B9%A0%E9%87%8D%E9%9A%BE%E7%82%B9%E8%AE%B0%E5%BD%95/logo3.gif" width height></center>
@@ -633,6 +633,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">markdown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">二进制</a>
               </li>
             
             <div class="clearfix"></div>
