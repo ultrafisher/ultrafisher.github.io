@@ -8,16 +8,16 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Python对约瑟夫问题(Josephus Problem)的高效解决方法 | UltraFisher</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Made by Mike_Zhang 1.约瑟夫问题引入约瑟夫问题由来先看一下百度百科对约瑟夫问题的介绍：  据说著名犹太历史学家Josephus有过以下的故事：在罗马人占领乔塔帕特后，39 个犹太人与Josephus及他的朋友躲到一个洞中，39个犹太人决定宁愿死也不要被敌人抓到，于是决定了一个自杀方式，41个人排成一个圆圈，由第1个人开始报数，每报数到第3人该人就必须自杀，然后再由下一个重新报数">
+  <meta name="description" content="Made by Mike_Zhang   博客名称及其域名变更提醒:我的个人博客名称已由 UltraFisher 改为 UltraFish.相应的域名已由ultrafisher.github.io改为ultrafish.cn.后续所有的更新将会在ultrafish.cn进行, 本网站将停止更新.十分感谢您的浏览以及支持, 让我们在UltraFish再次相遇! NotificationThe nam">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python对约瑟夫问题(Josephus Problem)的高效解决方法">
 <meta property="og:url" content="http://yoursite.com/2020/08/05/josephus-problem/index.html">
 <meta property="og:site_name" content="UltraFisher">
-<meta property="og:description" content="Made by Mike_Zhang 1.约瑟夫问题引入约瑟夫问题由来先看一下百度百科对约瑟夫问题的介绍：  据说著名犹太历史学家Josephus有过以下的故事：在罗马人占领乔塔帕特后，39 个犹太人与Josephus及他的朋友躲到一个洞中，39个犹太人决定宁愿死也不要被敌人抓到，于是决定了一个自杀方式，41个人排成一个圆圈，由第1个人开始报数，每报数到第3人该人就必须自杀，然后再由下一个重新报数">
+<meta property="og:description" content="Made by Mike_Zhang   博客名称及其域名变更提醒:我的个人博客名称已由 UltraFisher 改为 UltraFish.相应的域名已由ultrafisher.github.io改为ultrafish.cn.后续所有的更新将会在ultrafish.cn进行, 本网站将停止更新.十分感谢您的浏览以及支持, 让我们在UltraFish再次相遇! NotificationThe nam">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/2020/08/05/josephus-problem/logo3.gif">
 <meta property="article:published_time" content="2020-08-05T04:45:50.000Z">
-<meta property="article:modified_time" content="2020-08-23T10:52:59.594Z">
+<meta property="article:modified_time" content="2020-10-15T06:50:31.936Z">
 <meta property="article:author" content="Mike_Zhang">
 <meta property="article:tag" content="python">
 <meta property="article:tag" content="josephus_problem">
@@ -195,6 +195,12 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><strong><em>Made by Mike_Zhang</em></strong></p>
+<hr>
+<blockquote>
+<h3 id="博客名称及其域名变更提醒"><a href="#博客名称及其域名变更提醒" class="headerlink" title="博客名称及其域名变更提醒:"></a>博客名称及其域名变更提醒:</h3><p>我的个人博客名称已由 <strong>UltraFisher</strong> 改为 <strong>UltraFish.</strong><br>相应的域名已由<a href="https://ultrafisher.github.io" target="_blank" rel="noopener">ultrafisher.github.io</a>改为<a href="http://ultrafish.cn" target="_blank" rel="noopener">ultrafish.cn</a>.<br><strong>后续所有的更新将会在<a href="http://ultrafish.cn" target="_blank" rel="noopener">ultrafish.cn</a>进行, 本网站将停止更新.</strong><br>十分感谢您的浏览以及支持, 让我们在<a href="http://ultrafish.cn" target="_blank" rel="noopener">UltraFish</a>再次相遇!</p>
+<h3 id="Notification"><a href="#Notification" class="headerlink" title="Notification"></a>Notification</h3><p>The name of my personal blog has been changed from <strong>UltraFisher</strong> to <strong>UltraFish.</strong><br>Its domain name has been changed from <a href="https://ultrafisher.github.io" target="_blank" rel="noopener">ultrafisher.github.io</a> to <a href="http://ultrafish.cn" target="_blank" rel="noopener">ultrafish.cn</a>.<br><strong>ONLY <a href="http://ultrafish.cn" target="_blank" rel="noopener">ultrafish.cn</a> will be updated, this website will NOT be updated.</strong><br>Thank you very much for your browsing and support, see you on the <a href="http://ultrafish.cn" target="_blank" rel="noopener">UltraFish</a>!<br>Mike_Zhang<br>2020/10/15</p>
+</blockquote>
+<hr>
 <h2 id="1-约瑟夫问题引入"><a href="#1-约瑟夫问题引入" class="headerlink" title="1.约瑟夫问题引入"></a><strong>1.约瑟夫问题引入</strong></h2><h4 id="约瑟夫问题由来"><a href="#约瑟夫问题由来" class="headerlink" title="约瑟夫问题由来"></a>约瑟夫问题由来</h4><p>先看一下<a href="https://baike.baidu.com/item/约瑟夫问题" target="_blank" rel="noopener">百度百科</a>对约瑟夫问题的介绍：</p>
 <blockquote>
 <p>据说著名犹太历史学家Josephus有过以下的故事：在罗马人占领乔塔帕特后，39 个犹太人与Josephus及他的朋友躲到一个洞中，39个犹太人决定宁愿死也不要被敌人抓到，于是决定了一个自杀方式，41个人排成一个圆圈，由第1个人开始报数，每报数到第3人该人就必须自杀，然后再由下一个重新报数，直到所有人都自杀身亡为止。然而Josephus和他的朋友并不想遵从。首先从一个人开始，越过k-2个人（因为第一个人已经被越过），并杀掉第k个人。接着，再越过k-1个人，并杀掉第k个人。这个过程沿着圆圈一直进行，直到最终只剩下一个人留下，这个人就可以继续活着。问题是，给定了和，一开始要站在什么地方才能避免被处决？Josephus要他的朋友先假装遵从，他将朋友与自己安排在第16个与第31个位置，于是逃过了这场死亡游戏。(来自百度百科-约瑟夫问题)</p>
@@ -816,7 +822,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-约瑟夫问题引入"><span class="toc-number">1.</span> <span class="toc-text">1.约瑟夫问题引入</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#约瑟夫问题由来"><span class="toc-number">1.0.1.</span> <span class="toc-text">约瑟夫问题由来</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#实际问题案例"><span class="toc-number">1.0.2.</span> <span class="toc-text">实际问题案例</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-星期计算问题"><span class="toc-number">2.</span> <span class="toc-text">2.星期计算问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Python代码实现"><span class="toc-number">3.</span> <span class="toc-text">3.Python代码实现</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#类比星期问题"><span class="toc-number">3.0.1.</span> <span class="toc-text">类比星期问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Python代码"><span class="toc-number">3.0.2.</span> <span class="toc-text">Python代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#验证"><span class="toc-number">3.0.3.</span> <span class="toc-text">验证</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-总结"><span class="toc-number">4.</span> <span class="toc-text">4.总结</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#博客名称及其域名变更提醒"><span class="toc-number">1.</span> <span class="toc-text">博客名称及其域名变更提醒:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Notification"><span class="toc-number">2.</span> <span class="toc-text">Notification</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-约瑟夫问题引入"><span class="toc-number"></span> <span class="toc-text">1.约瑟夫问题引入</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#约瑟夫问题由来"><span class="toc-number">0.1.</span> <span class="toc-text">约瑟夫问题由来</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#实际问题案例"><span class="toc-number">0.2.</span> <span class="toc-text">实际问题案例</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-星期计算问题"><span class="toc-number"></span> <span class="toc-text">2.星期计算问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Python代码实现"><span class="toc-number"></span> <span class="toc-text">3.Python代码实现</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#类比星期问题"><span class="toc-number">0.1.</span> <span class="toc-text">类比星期问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Python代码"><span class="toc-number">0.2.</span> <span class="toc-text">Python代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#验证"><span class="toc-number">0.3.</span> <span class="toc-text">验证</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-总结"><span class="toc-number"></span> <span class="toc-text">4.总结</span></a>
                     </div>
                 </span>
             </div>
@@ -966,11 +972,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+                <a href="javascript:void(0)" class="js-tag color4">二进制</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -983,10 +993,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">背景</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">二进制</a>
               </li>
              
               <li class="article-tag-list-item">
